@@ -60,11 +60,11 @@ class SlackBot extends Adapter
     return if msg.hidden
     return if not msg.text and not msg.attachments
 
-    # Ignore bot messages (TODO: make this support an option?)
-    return if msg.subtype is 'bot_message'
+    # # Ignore bot messages (TODO: make this support an option?)
+    # return if msg.subtype is 'bot_message'
 
-    # Ignore message subtypes that don't have a top level user property
-    return if not msg.user
+    # # Ignore message subtypes that don't have a top level user property
+    # return if not msg.user
 
     channel = @client.getChannelGroupOrDMByID msg.channel
     user = @client.getUserByID msg.user
